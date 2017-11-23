@@ -1,5 +1,5 @@
 module.exports = {
 	rules: {
-		'require-js': require('./require-js'),
+		'require-jsdoc': require('./require-jsdoc'),
 	},
 };
