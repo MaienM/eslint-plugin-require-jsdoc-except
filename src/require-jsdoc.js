@@ -2,11 +2,14 @@ const baseRule = require('eslint/lib/rules/require-jsdoc');
 const assignIn = require('lodash.assignin');
 const get = require('lodash.get');
 
+const REGEX_STRING = /^\/(.*)\/([a-z]*)$/;
+
 module.exports = {
 	meta: {
 		docs: {
 			description: 'require JSDoc comments, with exceptions',
 			category: "Stylistic Issues",
+			recommended: false,
 		},
 
 		schema: [{
@@ -15,6 +18,7 @@ module.exports = {
 					type: 'array',
 					items: {
 						type: 'string',
+						format: 'regex',
 					},
 				},
 			},
@@ -23,7 +27,12 @@ module.exports = {
 
 	create(context) {
 		// Get the ignorelist
-		const ignoreList = context.options[0] && context.options[0].ignore || [];
+		const ignoreList = (context.options[0] && context.options[0].ignore || [])
+			.map((ign) => {
+				// If possible, convert to regexp objects
+				const match = REGEX_STRING.exec(ign);
+				return match ? RegExp.apply(RegExp, match.slice(1)) : ign;
+			});
 
 		// Create instance of the base rule
 		const base = baseRule.create(assignIn({}, context, {
@@ -57,7 +66,7 @@ module.exports = {
 		 */
 		function shouldCheck(node) {
 			const name = getName(node);
-			return !name || ignoreList.indexOf(name) < 0;
+			return !name || !ignoreList.find((ign) => (ign.test ? ign.test(name) : ign === name));
 		}
 
 		return {

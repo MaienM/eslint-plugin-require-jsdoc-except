@@ -1,10 +1,10 @@
 {
   "name": "eslint-plugin-require-jsdoc-except",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A modified version of the built-in eslint rule require-jsdoc that allows you to exclude certain methods from requiring a JSDoc.",
   "main": "src/index.js",
   "scripts": {
-    "test": "node tests/index.js"
+    "test": "node tests"
   },
   "repository": {
     "type": "git",

@@ -60,6 +60,20 @@ ruleTester.run('require-jsdoc-except', rule, {
 			parserOptions: { ecmaVersion: 6 },
 			options: [options],
 		},
+		{
+			code: 'function myFunction() {}',
+			options: [{
+				require: options.require,
+				ignore: ['/^my/'],
+			}],
+		},
+		{
+			code: 'function myFunction() {}',
+			options: [{
+				require: options.require,
+				ignore: ['/^MY/i'],
+			}],
+		},
 	],
 
 	invalid: [],
