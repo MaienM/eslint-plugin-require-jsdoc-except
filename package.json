@@ -1,4 +1,24 @@
 {
+  "name": "eslint-plugin-require-jsdoc-except",
+  "version": "1.0.0",
+  "description": "A modified version of the built-in eslint rule require-jsdoc that allows you to exclude certain methods from requiring a JSDoc.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node tests/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaienM/eslint-plugin-require-jsdoc-except.git"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Michon van Dooren",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaienM/eslint-plugin-require-jsdoc-except/issues"
+  },
+  "homepage": "https://github.com/MaienM/eslint-plugin-require-jsdoc-except#readme",
   "peerDependencies": {
     "eslint": "^4.11.0"
   },
