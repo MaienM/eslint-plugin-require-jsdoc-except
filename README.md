@@ -25,12 +25,12 @@ npm install eslint-plugin-require-jsdoc-except --save-dev
 
 ## Usage
 
-Add `require-jsdoc-with-exception` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `require-jsdoc-except` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
 	"plugins": [
-		"require-jsdoc-with-exception"
+		"require-jsdoc-except"
 	]
 }
 ```
@@ -44,7 +44,7 @@ functions named constructor).
 
 ``` json
 {
-	"require-jsdoc-except/require": ["error", {
+	"require-jsdoc-except/require-jsdoc": ["error", {
 		"require": {
 			"FunctionDeclaration": true,
 			"MethodDefinition": true,
