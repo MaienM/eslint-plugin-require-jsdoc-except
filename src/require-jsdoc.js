@@ -47,6 +47,7 @@ module.exports = {
 				case 'AssignmentExpression':
 					return node.parent.right === node && get(node, 'parent.left.property.name');
 
+				case 'ClassProperty':
 				case 'Property':
 				case 'MethodDefinition':
 					return get(node, 'parent.key.name');

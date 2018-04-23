@@ -41,6 +41,12 @@ ruleTester.run('require-jsdoc-except', rule, {
 			options: [options],
 		},
 		{
+			code: '/** Class. */ class Cls { myFunction = () => {} };',
+			parser: 'babel-eslint',
+			parserOptions: { ecmaVersion: 6 },
+			options: [options],
+		},
+		{
 			code: 'var myFunction = () => {};',
 			parserOptions: { ecmaVersion: 6 },
 			options: [options],
