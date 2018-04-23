@@ -20,12 +20,12 @@
   },
   "homepage": "https://github.com/MaienM/eslint-plugin-require-jsdoc-except#readme",
   "peerDependencies": {
-    "eslint": "^4.11.0"
+    "eslint": "^4.19.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-eslint": "^8.2.3",
-    "eslint": "^4.11.0"
+    "eslint": "^4.19.0"
   },
   "dependencies": {
     "lodash.assignin": "^4.2.0",
