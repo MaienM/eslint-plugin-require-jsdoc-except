@@ -45,16 +45,31 @@ functions named constructor).
 
 ``` json
 {
-	"require-jsdoc-except/require-jsdoc": ["error", {
+    "rules": {
+	"require-jsdoc-except/require-jsdoc": [
+            "error",
+            {
 		"require": {
-			"FunctionDeclaration": true,
-			"MethodDefinition": true,
-			"ClassDeclaration": true,
-			"ArrowFunctionExpression": true,
-			"FunctionExpression": true
+                    "FunctionDeclaration": true,
+                    "MethodDefinition": true,
+                    "ClassDeclaration": true,
+                    "ArrowFunctionExpression": true,
+                    "FunctionExpression": true
 		},
-		"ignore": ["constructor"]
-	}]
+		"ignore": ["constructor"],
+	    }
+        ],
+    }
 }
 ```
 
+NOTE: You may also need to disable the old `require-jsdoc`, as this will essentially replace it. If you do not, then
+both rules will be running at the same time.
+
+```
+{
+    "rules": {
+        "require-jsdoc": "off",
+    }
+}
+```
