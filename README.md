@@ -46,19 +46,16 @@ functions named constructor).
 ``` json
 {
     "rules": {
-	"require-jsdoc-except/require-jsdoc": [
-            "error",
-            {
-		"require": {
-                    "FunctionDeclaration": true,
-                    "MethodDefinition": true,
-                    "ClassDeclaration": true,
-                    "ArrowFunctionExpression": true,
-                    "FunctionExpression": true
-		},
-		"ignore": ["constructor"],
-	    }
-        ],
+        "require-jsdoc-except/require-jsdoc": ["error", {
+            "require": {
+                "FunctionDeclaration": true,
+                "MethodDefinition": true,
+                "ClassDeclaration": true,
+                "ArrowFunctionExpression": true,
+                "FunctionExpression": true
+            },
+            "ignore": ["constructor"],
+        }],
     }
 }
 ```
