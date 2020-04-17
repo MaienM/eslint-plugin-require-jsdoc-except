@@ -1,7 +1,7 @@
 'use strict';
 
-const RuleTester = require('eslint/lib/testers/rule-tester');
 const rule = require('../src/require-jsdoc');
+const RuleTester = require("./RuleTester");
 
 const options = {
 	require: {
@@ -42,7 +42,7 @@ ruleTester.run('require-jsdoc-except', rule, {
 		},
 		{
 			code: '/** Class. */ class Cls { myFunction = () => {} };',
-			parser: 'babel-eslint',
+			parser: require.resolve('babel-eslint'),
 			parserOptions: { ecmaVersion: 6 },
 			options: [options],
 		},

@@ -10,8 +10,8 @@
  */
 "use strict";
 
-const rule = require("../src/require-jsdoc"),
-    RuleTester = require("eslint/lib/testers/rule-tester");
+const rule = require("../src/require-jsdoc");
+const RuleTester = require("./RuleTester");
 
 //------------------------------------------------------------------------------
 // Tests
@@ -288,7 +288,7 @@ ruleTester.run("require-jsdoc-except", rule, {
             "        this.a = xs;" +
             "    }\n" +
             "}",
-            parserOptions: { sourceType: "module" },
+            parserOptions: { ecmaVersion: 6, sourceType: "module" },
             options: [{
                 require: {
                     MethodDefinition: true,
@@ -311,7 +311,7 @@ ruleTester.run("require-jsdoc-except", rule, {
             "        this.a = xs;" +
             "    }\n" +
             "}",
-            parserOptions: { sourceType: "module" },
+            parserOptions: { ecmaVersion: 6, sourceType: "module" },
             options: [{
                 require: {
                     MethodDefinition: true,
