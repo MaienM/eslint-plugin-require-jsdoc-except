@@ -23,6 +23,10 @@ module.exports = {
 				},
 			},
 		}],
+
+		messages: {
+			missingJSDocComment: "Missing JSDoc comment."
+		}
 	},
 
 	create(context) {
