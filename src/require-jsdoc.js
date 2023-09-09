@@ -1,4 +1,4 @@
-const baseRule = require('eslint/lib/rules/require-jsdoc');
+const baseRule = require("eslint-plugin-jsdoc/dist/rules/requireJsdoc");
 const assignIn = require('lodash.assignin');
 const get = require('lodash.get');
 
@@ -25,7 +25,7 @@ module.exports = {
 		}],
 
 		messages: {
-			missingJSDocComment: "Missing JSDoc comment."
+			missingJsDoc: "Missing JSDoc comment."
 		}
 	},
 
